@@ -3,11 +3,13 @@ const bodyParser = require('body-parser');
 const { createClient } = require('@supabase/supabase-js');
 const { format } = require("date-fns");
 const { utcToZonedTime } = require('date-fns-tz');
+const { cors } = require('cors');
 require("dotenv").config();
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
