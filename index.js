@@ -117,7 +117,7 @@ app.get('/api/history', authenticateToken, async (req, res) => {
 });
 
 app.get('/api/test', authenticateToken, async (req, res) => {
-      res.status(200).json({ success: true, message: 'API accessed.', data: data });
+      res.json({ success: true, message: 'API accessed.'});
 });
 
 app.listen(port, () => {
