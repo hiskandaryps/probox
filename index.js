@@ -4,6 +4,7 @@ const { createClient } = require('@supabase/supabase-js');
 const { format } = require("date-fns");
 const { utcToZonedTime } = require('date-fns-tz');
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.JWT_SECRET || 'hohoh';
 require("dotenv").config();
 
