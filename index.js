@@ -66,7 +66,7 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-app.get('/api/probox', async (req, res) => {
+app.get('/api/probox', authenticateToken, async (req, res) => {
   try {
     const { data, error } = await supabase
       .from('sensor')
@@ -90,7 +90,7 @@ app.get('/api/probox', async (req, res) => {
   }
 });
 
-app.get('/api/history', async (req, res) => {
+app.get('/api/history', authenticateToken, async (req, res) => {
   try {
     const { data, error } = await supabase
       .from('sensor')
