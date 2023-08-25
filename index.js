@@ -41,7 +41,7 @@ app.post('/api/login', async (req, res) => {
     }
 
     // User with the provided email exists, generate a JWT token with userEmail
-    const token = jwt.sign({ userEmail }, JWT_SECRET, { expiresIn: '1h' });
+    const token = jwt.sign(JWT_SECRET, { expiresIn: '1h' });
 
     // Send the token in the response
     res.json({ success: true, message: 'Authentication successful.', token });
